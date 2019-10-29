@@ -12,7 +12,7 @@ import { taskRouter } from "./routes/task";
 
 mongoose.connect("mongodb://localhost/todo").then();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT
 app.use(koabody({ multipart: true }));
 require("./configs/passport");
 

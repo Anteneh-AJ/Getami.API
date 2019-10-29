@@ -10,7 +10,7 @@
     "watch": "tsc -w",
     "dev": "nodemon --watch api/**/*.ts --exec ts-node ./api/index.ts",
     "web-install": "cd web  && yarn install && yarn run build",
-    "build": "tsc && yarn web-install",
+    "build": "tsc",
     "start": "yarn prod && cd ./dist && yarn index.js",
     "prod": "export NODE_ENV=production && yarn build"
   },

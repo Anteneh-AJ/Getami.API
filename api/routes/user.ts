@@ -20,7 +20,9 @@ userRouter.post("/logout", authorize(), async ctx => {
         ctx.body = {loggedOut: true};
     }
 });
-
+userRouter.get("/testing",async ctx=>{
+    ctx.body= return "Hello netlify"
+})
 userRouter.get("/me", authorize(),async ctx => await getMyAccount(ctx));
 
 userRouter.get("/all", async ctx => await getUsers(ctx));

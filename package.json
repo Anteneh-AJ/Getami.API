@@ -10,9 +10,9 @@
     "watch": "tsc -w",
     "dev": "nodemon --watch api/**/*.ts --exec ts-node ./api/index.ts",
     "web-install": "cd web  && yarn install && yarn run build",
-    "build": "tsc && yarn web-install",
-    "start": "yarn prod && cd ./dist && yarn index.js",
-    "prod": "export NODE_ENV=production && yarn build"
+    "build": "tsc",
+    "start": "yarn build && cd ./dist && node index.js",
+    "prod": "--exec export NODE_ENV=production && yarn build"
   },
   "dependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -46,5 +46,6 @@
     "yarn": "^1.17.3"
   },
   "devDependencies": {
+  	"nodemon": "^1.19.2"
   }
 }

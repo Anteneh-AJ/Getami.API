@@ -12,6 +12,10 @@ userRouter.post(
         failureRedirect: "/login"
     })
 );
+userRouter.post("/logout", authorize(), async ctx => {
+        ctx.body = "Hello World";
+    
+});
 
 userRouter.post("/logout", authorize(), async ctx => {
     if (ctx.isAuthenticated) {

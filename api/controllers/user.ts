@@ -1,4 +1,5 @@
-import { IUser, User } from "../models/user";
+import { User } from "../models/user/User";
+import { IUser } from "../models/user/IUser";
 import { Schema } from "mongoose";
 import { add, update, get, list, find } from "../services/crud";
 import { hash } from "bcrypt";

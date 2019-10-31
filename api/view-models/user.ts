@@ -1,5 +1,5 @@
-import { IUser } from "../models/user";
 import { Schema } from "mongoose";
+import { IUser } from "../models/user/IUser";
 
 export interface IUserResponse {
     _id: Schema.Types.ObjectId

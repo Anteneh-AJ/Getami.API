@@ -1,8 +1,8 @@
 import * as KoaPassport from 'koa-passport'
 import * as PassportLocal from 'passport-local'
 import { Document } from 'mongoose'
-
-import { User, IUser } from '../models/user';
+import { User, } from '../models/user/User';
+import { IUser, } from '../models/user/IUser';
 import { compare } from "bcrypt";
 
 // account serialization and deserialization in/from context.state.user

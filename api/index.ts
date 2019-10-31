@@ -8,7 +8,7 @@ import * as mongoose from "mongoose"
 import * as path from "path";
 import serve = require("koa-static");
 import { userRouter } from "./routes/user";
-import { taskRouter } from "./routes/task";
+import { getemRouter } from "./routes/getem";
 
 mongoose.connect("mongodb://localhost/todo").then();
 
@@ -26,7 +26,7 @@ app.use(passport.session());
 
 app.use(logger());
 app.use(userRouter.routes());
-app.use(taskRouter.routes());
+app.use(getemRouter.routes());
 
 if (process.env.NODE_ENV === "production") {
     app.use(serve(path.join(process.cwd(), "..", 'web', 'build')));

@@ -5,8 +5,6 @@ import * as  koabody from "koa-body";
 import * as passport from "koa-passport"
 import * as session from "koa-session"
 import * as mongoose from "mongoose"
-import * as path from "path";
-import serve = require("koa-static");
 import { userRouter } from "./routes/user";
 import { getemRouter } from "./routes/getem";
 
@@ -29,8 +27,6 @@ app.use(userRouter.routes());
 app.use(getemRouter.routes());
 
 if (process.env.NODE_ENV === "production") {
-    app.use(serve(path.join(process.cwd(), "..", 'web', 'build')));
-    console.log(path.join(process.cwd(), 'web', 'build'));
     console.log("Started in production")
 }
 

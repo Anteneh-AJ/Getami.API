@@ -1,24 +1,34 @@
 import * as mongoose from "mongoose";
-import { Document, Schema } from 'mongoose';
+import { Schema } from 'mongoose';
 
 const enums = {
-    visibility:{
-        PRIVATE : "PRIVATE",
-        PUBLIC :"PUBLIC"
+    visibility: {
+        PRIVATE: "PRIVATE",
+        PUBLIC: "PUBLIC"
     }
 };
-type VISIBILITY = keyof typeof enums.visibility 
 
 const GetemSchema = new Schema({
     createdOn: { type: Date, required: true, default: Date.now() },
     title: { type: String, required: true, unique: true, index: true },
-    getem: { type: String, required: true, index: true },
-    likes: { type: Date, required: true },
-    visibility:{type : VISBILITY , }
-    owner:{type:Schema.Types.ObjectId,ref:"User"}
+    likes: [
+        {
+            _By: { type: Schema.Types.ObjectId, ref: "User" },
+            _On: { type: Date, default: Date.now }
+        }
+    ],
+    verses: [
+        {
+            verse: { type: String },
+            _By: { type: Schema.Types.ObjectId, ref: "User" },
+            _CreatedOn: { type: Date, default: Date.now }
+        }
+    ],
+    visibility: { type: String, enum: enums.visibility },
+    owner: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
-GetemSchema.index({ title: 'text',getem: 'text' });
+GetemSchema.index({ title: 'text' });
 
 const Getem = mongoose.model("Getem", GetemSchema);
 export { Getem }

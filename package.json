@@ -23,7 +23,6 @@
     "@types/koa-passport": "^4.0.2",
     "@types/koa-router": "^7.0.42",
     "@types/koa-session": "^5.10.1",
-    "@types/koa-static": "^4.0.1",
     "@types/mongoose": "^5.5.9",
     "@types/passport-local": "^1.0.33",
     "bcrypt": "^3.0.6",
@@ -37,7 +36,6 @@
     "koa-passport": "^4.1.1",
     "koa-router": "^7.4.0",
     "koa-session": "^5.12.2",
-    "koa-static": "^5.0.0",
     "mongoose": "^5.6.6",
     "nodemailer": "^5.1.1",
     "passport-local": "^1.0.0",
@@ -46,6 +44,6 @@
     "yarn": "^1.17.3"
   },
   "devDependencies": {
-  	"nodemon": "^1.19.2"
+    "nodemon": "^1.19.2"
   }
 }

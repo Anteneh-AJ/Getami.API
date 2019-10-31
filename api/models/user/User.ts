@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose";
-import { Document, Schema } from 'mongoose';
+import { Schema } from 'mongoose';
 
 
 const UserSchema = new Schema({
